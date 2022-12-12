@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useForm } from 'react-hook-form'
+import { set, useForm } from 'react-hook-form'
 import './styles/formUser.css'
 
 const FormUser = ({createNewUsers, updateInfo, updateUserById, setUpdateInfo, setCloseForm}) => {
@@ -29,7 +29,16 @@ const FormUser = ({createNewUsers, updateInfo, updateUserById, setUpdateInfo, se
 
   return (
     <form className='form' onSubmit={handleSubmit(submit)}>
-        <div onClick={ () => setCloseForm(true)} className='form__x'>x</div>
+        <div onClick={ () => {setCloseForm(true),
+             setUpdateInfo()
+             reset({
+                email:'',
+                password:'',
+                first_name:'',
+                last_name:'',
+                birthday:''
+            })
+             } } className='form__x'>x</div>
         <h2 className='form__title'>{updateInfo? 'Update user' : 'Create user'}</h2>
         <div className='form__div'>
             <label className='form__label' htmlFor="email">Email</label>

@@ -7,14 +7,14 @@ const useCrud = () => {
 
 
   const getALlUsers = () => {
-    const URL = 'http://users-crud.academlo.tech/users/'
+    const URL = 'https://users-crud.academlo.tech/users/'
     axios.get(URL)
     .then(res => setUsers(res.data))
     .catch(err => console.log(err))
   }
   
   const createNewUsers = data => {
-    const URL = 'http://users-crud.academlo.tech/users/'
+    const URL = 'https://users-crud.academlo.tech/users/'
     axios.post(URL, data)
     .then(res => {
       console.log(res.data)
@@ -24,7 +24,7 @@ const useCrud = () => {
   }
 
   const deleteUserById = id => {
-    const URL = `http://users-crud.academlo.tech/users/${id}/`
+    const URL = `https://users-crud.academlo.tech/users/${id}/`
     axios.delete(URL)
     .then(res => {
         console.log(res.data)
@@ -34,7 +34,7 @@ const useCrud = () => {
   }
 
   const updateUserById = (id, data) => {
-    const URL = `http://users-crud.academlo.tech/users/${id}/`
+    const URL = `https://users-crud.academlo.tech/users/${id}/`
     axios.put(URL, data)
     .then(res => {
       console.log(res.data)
