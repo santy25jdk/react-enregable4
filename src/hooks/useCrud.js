@@ -5,7 +5,7 @@ const useCrud = () => {
   const [users, setUsers] = useState();
 
   const getALlUsers = () => {
-    const URL = "https://crud-user-xah7.onrender.com/users/";
+    const URL = "http://localhost:8080/users/";
     axios
       .get(URL)
       .then((res) => setUsers(res.data))
@@ -13,7 +13,7 @@ const useCrud = () => {
   };
 
   const createNewUsers = (data) => {
-    const URL = "https://crud-user-xah7.onrender.com/users/";
+    const URL = "http://localhost:8080/users/";
     axios
       .post(URL, data)
       .then((res) => {
@@ -24,7 +24,7 @@ const useCrud = () => {
   };
 
   const deleteUserById = (id) => {
-    const URL = `https://crud-user-xah7.onrender.com/users/${id}/`;
+    const URL = `http://localhost:8080/users/${id}/`;
     axios
       .delete(URL)
       .then((res) => {
@@ -35,7 +35,7 @@ const useCrud = () => {
   };
 
   const updateUserById = (id, data) => {
-    const URL = `https://crud-user-xah7.onrender.com/${id}/`;
+    const URL = `http://localhost:8080/${id}/`;
     axios
       .put(URL, data)
       .then((res) => {
